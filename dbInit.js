@@ -36,7 +36,7 @@ sequelize
         cost: 15,
         chance: 0.02,
       }),
-      CurrencyShop.upsert({ name: 'Pula-n cur', cost: 1000, chance: 0.01 }),
+      CurrencyShop.upsert({ name: 'Pula-n cur', cost: 500, chance: 0.01 }),
     ];
 
     await Promise.all(shop);

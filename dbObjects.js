@@ -58,6 +58,14 @@ Reflect.defineProperty(Users.prototype, 'sellItem', {
   },
 });
 
+Reflect.defineProperty(Users.prototype, 'sellAll', {
+  value: async function sellAll() {
+    return UserItems.destroy({
+      where: { user_id: this.user_id },
+    });
+  },
+});
+
 Reflect.defineProperty(Users.prototype, 'getItems', {
   value: function getItems() {
     return UserItems.findAll({

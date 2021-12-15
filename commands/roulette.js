@@ -14,7 +14,7 @@ module.exports = {
         'Fonduri insuficiente. Ai nevoie de 5 RON sa bagi la ruleta.'
       );
     }
-    Client.currency.add(interaction.user.id, -3);
+    Client.currency.add(interaction.user.id, -5);
 
     const items = await CurrencyShop.findAll();
     const randomNumber = Math.floor(Math.random() * 100) + 1;

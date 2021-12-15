@@ -17,6 +17,8 @@ module.exports = {
     if (amount > Client.currency.getBalance(interaction.user.id))
       return interaction.reply('Nu ai fonduri necesare.');
 
+    Client.currency.add(interaction.user.id, -amount);
+
     const roll = Math.random() < 0.5;
     if (roll) {
       Client.currency.add(interaction.user.id, amount * 2);
@@ -26,7 +28,6 @@ module.exports = {
         )} RON`
       );
     } else {
-      Client.currency.add(interaction.user.id, -amount);
       interaction.reply(
         `Ai pierdut ${amount} RON. Acum ai ${Client.currency.getBalance(
           interaction.user.id
