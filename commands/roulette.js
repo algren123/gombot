@@ -9,7 +9,7 @@ module.exports = {
       'dai 5 RON si iti pica un item. /odds pentru a vedea sansele.'
     ),
   async execute(interaction) {
-    if (Client.currency.getBalance(interaction.user.id) < 3) {
+    if (Client.currency.getBalance(interaction.user.id) < 5) {
       return interaction.reply(
         'Fonduri insuficiente. Ai nevoie de 5 RON sa bagi la ruleta.'
       );
